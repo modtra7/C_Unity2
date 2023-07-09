@@ -4,54 +4,36 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour
 {
-    public string name = "Mo";
-    public string food = "Ramen";
-    public bool likeToShare;
-    public uint amount = 7;
-    string gameName = "Final Fantasy XIV";
-    int age = 25;
+    public int[] lives;
+    int[] scores = new int[3];
+    string[] names = { "Mike", "James", "Pete" };
 
-    public string game = "OverWatch";
-    public int rating = 1;
+    public int[] points;
 
-    // (float)x or xf
-    public float myFloat = 1.2f;
-    bool likesGame = false;
-    sbyte overflowError = 127;
+    void OnEnable()
+    {
 
-    public int totalAmount;
-    public float tipPercentage;
+    }
 
     void OnDisable()
     {
-        int tip = (int) ((float) totalAmount * tipPercentage);
-        Debug.Log("Yoyr total balance is " + (tip + totalAmount));
+        scores[0] = 403;
+        scores[1] = 200;
+        scores[2] = 500;
 
-        // Debug.Log("The game " + gameName + " is " + age + " years old?");
-        // overflowError = (sbyte) (overflowError + 1);
-        // Debug.Log("the result of the overflow error is: " + overflowError);
-        // Debug.Log("My name is " + name + ", and my favorite food is " + food + " and I like to eat it " + amount + " times a day and I like to share it with others: " + likeToShare);
-        // x = x + 1;
-        // Debug.Log("x = x + 1 is " + x);
-        // x += 1;
-        // Debug.Log("x += 1 is " + x);
-        // ++x;
-        // Debug.Log("++x is " + x);
-        // Debug.Log("x++ is " + x++);
-        // Debug.Log("x is " + x);
+        int combinedPoints = points[0] + points[1] + points[2] + points[3] + points[4];
+        int average = combinedPoints / 5;
 
-        // int x = 100;
-        // int y = 20;
-        // byte z = (byte) (x + y);
-        // Debug.Log("z is " + z);
-    }
-    void OnEnable()
-    {
-        Debug.Log("The game " + game + " is rated " + rating + " stars.");
+        Debug.Log("The average is " + average);
     }
 }
 
+//////////////////////
+//type[] myArray = new type[length];
+//type[,] myArray = new type[2][3];
 
+
+//////////////////////
 // type name = value;
 
 // types //
@@ -70,3 +52,50 @@ public class HelloWorld : MonoBehaviour
 // DateTime = 8 bytes == January 1, 0001 0:0:00 to December 31, 9999 11:59:59 pm
 // char ===== 2 bytes == U+0000 to U+FFFF
 // bool ===== 2 bytes == true or false
+
+
+    // public string name = "Mo";
+    // public string food = "Ramen";
+    // public bool likeToShare;
+    // public uint amount = 7;
+    // string gameName = "Final Fantasy XIV";
+    // int age = 25;
+
+    // public string game = "OverWatch";
+    // public int rating = 1;
+
+    // // (float)x or xf
+    // public float myFloat = 1.2f;
+    // bool likesGame = false;
+    // sbyte overflowError = 127;
+
+    // public int totalAmount;
+    // public float tipPercentage;
+
+    // void OnDisable()
+    // {
+    //     int tip = (int) ((float) totalAmount * tipPercentage);
+    //     Debug.Log("Yoyr total balance is " + (tip + totalAmount));
+
+    //     // Debug.Log("The game " + gameName + " is " + age + " years old?");
+    //     // overflowError = (sbyte) (overflowError + 1);
+    //     // Debug.Log("the result of the overflow error is: " + overflowError);
+    //     // Debug.Log("My name is " + name + ", and my favorite food is " + food + " and I like to eat it " + amount + " times a day and I like to share it with others: " + likeToShare);
+    //     // x = x + 1;
+    //     // Debug.Log("x = x + 1 is " + x);
+    //     // x += 1;
+    //     // Debug.Log("x += 1 is " + x);
+    //     // ++x;
+    //     // Debug.Log("++x is " + x);
+    //     // Debug.Log("x++ is " + x++);
+    //     // Debug.Log("x is " + x);
+
+    //     // int x = 100;
+    //     // int y = 20;
+    //     // byte z = (byte) (x + y);
+    //     // Debug.Log("z is " + z);
+    // }
+    // void OnEnable()
+    // {
+    //     Debug.Log("The game " + game + " is rated " + rating + " stars.");
+    // }
