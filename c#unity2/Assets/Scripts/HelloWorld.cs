@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour
 {
-    string name = "Mo";
-    string food = "Ramen";
-    bool share = false;
-    uint amount = 7;
+    public string name = "Mo";
+    public string food = "Ramen";
+    public bool likeToShare;
+    public uint amount = 7;
     string gameName = "Final Fantasy XIV";
     int age = 25;
 
@@ -19,12 +19,31 @@ public class HelloWorld : MonoBehaviour
     bool likesGame = false;
     sbyte overflowError = 127;
 
+    public int totalAmount;
+    public float tipPercentage;
+
     void OnDisable()
     {
+        int tip = (int) ((float) totalAmount * tipPercentage);
+        Debug.Log("Yoyr total balance is " + (tip + totalAmount));
+
         // Debug.Log("The game " + gameName + " is " + age + " years old?");
         // overflowError = (sbyte) (overflowError + 1);
         // Debug.Log("the result of the overflow error is: " + overflowError);
-        Debug.Log("My name is " + name + ", and my favorite food is " + food + " and I like to eat it " + amount + " times a day and I like to share it with others: " + share);
+        // Debug.Log("My name is " + name + ", and my favorite food is " + food + " and I like to eat it " + amount + " times a day and I like to share it with others: " + likeToShare);
+        // x = x + 1;
+        // Debug.Log("x = x + 1 is " + x);
+        // x += 1;
+        // Debug.Log("x += 1 is " + x);
+        // ++x;
+        // Debug.Log("++x is " + x);
+        // Debug.Log("x++ is " + x++);
+        // Debug.Log("x is " + x);
+
+        // int x = 100;
+        // int y = 20;
+        // byte z = (byte) (x + y);
+        // Debug.Log("z is " + z);
     }
     void OnEnable()
     {
