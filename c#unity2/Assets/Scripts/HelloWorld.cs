@@ -4,27 +4,32 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour
 {
-    public int[] lives;
-    int[] scores = new int[3];
-    string[] names = { "Mike", "James", "Pete" };
+    public int myGuess = 0;
+    private int previousGuess = 0;
+    private int secretNumber;
 
-    public int[] points;
-
-    void OnEnable()
+    void Start()
     {
-
+        secretNumber = Random.Range(1, 10);
     }
-
-    void OnDisable()
+    void Update()
     {
-        scores[0] = 403;
-        scores[1] = 200;
-        scores[2] = 500;
-
-        int combinedPoints = points[0] + points[1] + points[2] + points[3] + points[4];
-        int average = combinedPoints / 5;
-
-        Debug.Log("The average is " + average);
+        if (myGuess != previousGuess)
+        {
+            if (myGuess == secretNumber)
+            {
+                Debug.Log("You win!");
+            }
+            else if (myGuess > secretNumber)
+            {
+                Debug.Log("Too high");
+            }
+            else 
+            {
+                Debug.Log("Too low");
+            }
+            previousGuess = myGuess;
+        }
     }
 }
 
@@ -98,4 +103,27 @@ public class HelloWorld : MonoBehaviour
     // void OnEnable()
     // {
     //     Debug.Log("The game " + game + " is rated " + rating + " stars.");
+    // }
+
+        // public int[] lives;
+    // int[] scores = new int[3];
+    // string[] names = { "Mike", "James", "Pete" };
+
+    // public int[] points;
+
+    // void OnEnable()
+    // {
+
+    // }
+
+    // void OnDisable()
+    // {
+    //     scores[0] = 403;
+    //     scores[1] = 200;
+    //     scores[2] = 500;
+
+    //     int combinedPoints = points[0] + points[1] + points[2] + points[3] + points[4];
+    //     int average = combinedPoints / 5;
+
+    //     Debug.Log("The average is " + average);
     // }
