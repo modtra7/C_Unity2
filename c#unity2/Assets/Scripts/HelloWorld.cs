@@ -4,62 +4,21 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour
 {
-
+    public string name;
    void OnDisable()
    {
-        bool[] isAlive = new bool[] {true, false, true};
-        string[] names = new string[] { "Ted", "Frank", "Tim" };
-        int[] scores = new int[] { Random.Range(0, 10), Random.Range(0, 10), Random.Range(0, 10) };
+        // int[] numbers = new int[] { Random.Range(0, 100), Random.Range(0, 100), Random.Range(0, 100)};
+        // string numberText;
 
-        int person = 0;
+        // numberText = (numbers[0] % 2 == 0) ? "even" : "odd";
+        // Debug.Log(numbers[0] + " is " + numberText);
+        // numberText = (numbers[1] % 2 == 0) ? "even" : "odd";
+        // Debug.Log(numbers[1] + " is " + numberText);
+        // numberText = (numbers[2] % 2 == 0) ? "even" : "odd";
+        // Debug.Log(numbers[2] + " is " + numberText);
 
-        if ( isAlive[person] == true)
-        {
-            if (scores[person] >= 5)
-            {
-                Debug.Log(names[person] + " scored " + scores[person] + " points. Great job!");
-            }
-            else
-            {
-                Debug.Log(names[person] + " scored " + scores[person] + " points. Terrible job!");
-            }
-        }
-        else
-        {
-            Debug.Log("Unfortunately, " + names[person] + " is dead.");
-        }
-        person += 1;
-        if ( isAlive[person] == true)
-        {
-            if (scores[person] >= 5)
-            {
-                Debug.Log(names[person] + " scored " + scores[person] + " points. Great job!");
-            }
-            else
-            {
-                Debug.Log(names[person] + " scored " + scores[person] + " points. Terrible job!");
-            }
-        }
-        else
-        {
-            Debug.Log("Unfortunately, " + names[person] + " is dead.");
-        }
-        person += 1;
-        if ( isAlive[person] == true)
-        {
-            if (scores[person] >= 5)
-            {
-                Debug.Log(names[person] + " scored " + scores[person] + " points. Great job!");
-            }
-            else
-            {
-                Debug.Log(names[person] + " scored " + scores[person] + " points. Terrible job!");
-            }
-        }
-        else
-        {
-            Debug.Log("Unfortunately, " + names[person] + " is dead.");
-        }
+        name = (name != "") ? name : "Player One";
+        Debug.Log("Hello, " + name);
    }
 }
 
@@ -184,3 +143,56 @@ public class HelloWorld : MonoBehaviour
     //         previousGuess = myGuess;
     //     }
     // }
+    // bool[] isAlive = new bool[] {true, false, true};
+        // string[] names = new string[] { "Ted", "Frank", "Tim" };
+        // int[] scores = new int[] { Random.Range(0, 10), Random.Range(0, 10), Random.Range(0, 10) };
+
+        // int person = 0;
+
+        // if ( isAlive[person] == true)
+        // {
+        //     if (scores[person] >= 5)
+        //     {
+        //         Debug.Log(names[person] + " scored " + scores[person] + " points. Great job!");
+        //     }
+        //     else
+        //     {
+        //         Debug.Log(names[person] + " scored " + scores[person] + " points. Terrible job!");
+        //     }
+        // }
+        // else
+        // {
+        //     Debug.Log("Unfortunately, " + names[person] + " is dead.");
+        // }
+        // person += 1;
+        // if ( isAlive[person] == true)
+        // {
+        //     if (scores[person] >= 5)
+        //     {
+        //         Debug.Log(names[person] + " scored " + scores[person] + " points. Great job!");
+        //     }
+        //     else
+        //     {
+        //         Debug.Log(names[person] + " scored " + scores[person] + " points. Terrible job!");
+        //     }
+        // }
+        // else
+        // {
+        //     Debug.Log("Unfortunately, " + names[person] + " is dead.");
+        // }
+        // person += 1;
+        // if ( isAlive[person] == true)
+        // {
+        //     if (scores[person] >= 5)
+        //     {
+        //         Debug.Log(names[person] + " scored " + scores[person] + " points. Great job!");
+        //     }
+        //     else
+        //     {
+        //         Debug.Log(names[person] + " scored " + scores[person] + " points. Terrible job!");
+        //     }
+        // }
+        // else
+        // {
+        //     Debug.Log("Unfortunately, " + names[person] + " is dead.");
+        // }
