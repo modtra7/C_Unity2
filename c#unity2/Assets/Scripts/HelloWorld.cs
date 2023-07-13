@@ -4,33 +4,63 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour
 {
-    public int myGuess = 0;
-    private int previousGuess = 0;
-    private int secretNumber;
 
-    void Start()
-    {
-        secretNumber = Random.Range(1, 10);
-    }
-    void Update()
-    {
-        if (myGuess != previousGuess)
+   void OnDisable()
+   {
+        bool[] isAlive = new bool[] {true, false, true};
+        string[] names = new string[] { "Ted", "Frank", "Tim" };
+        int[] scores = new int[] { Random.Range(0, 10), Random.Range(0, 10), Random.Range(0, 10) };
+
+        int person = 0;
+
+        if ( isAlive[person] == true)
         {
-            if (myGuess == secretNumber)
+            if (scores[person] >= 5)
             {
-                Debug.Log("You win!");
+                Debug.Log(names[person] + " scored " + scores[person] + " points. Great job!");
             }
-            else if (myGuess > secretNumber)
+            else
             {
-                Debug.Log("Too high");
+                Debug.Log(names[person] + " scored " + scores[person] + " points. Terrible job!");
             }
-            else 
-            {
-                Debug.Log("Too low");
-            }
-            previousGuess = myGuess;
         }
-    }
+        else
+        {
+            Debug.Log("Unfortunately, " + names[person] + " is dead.");
+        }
+        person += 1;
+        if ( isAlive[person] == true)
+        {
+            if (scores[person] >= 5)
+            {
+                Debug.Log(names[person] + " scored " + scores[person] + " points. Great job!");
+            }
+            else
+            {
+                Debug.Log(names[person] + " scored " + scores[person] + " points. Terrible job!");
+            }
+        }
+        else
+        {
+            Debug.Log("Unfortunately, " + names[person] + " is dead.");
+        }
+        person += 1;
+        if ( isAlive[person] == true)
+        {
+            if (scores[person] >= 5)
+            {
+                Debug.Log(names[person] + " scored " + scores[person] + " points. Great job!");
+            }
+            else
+            {
+                Debug.Log(names[person] + " scored " + scores[person] + " points. Terrible job!");
+            }
+        }
+        else
+        {
+            Debug.Log("Unfortunately, " + names[person] + " is dead.");
+        }
+   }
 }
 
 //////////////////////
@@ -126,4 +156,31 @@ public class HelloWorld : MonoBehaviour
     //     int average = combinedPoints / 5;
 
     //     Debug.Log("The average is " + average);
+    // }
+     // public int myGuess = 0;
+    // private int previousGuess = 0;
+    // private int secretNumber;
+
+    // void Start()
+    // {
+    //     secretNumber = Random.Range(1, 10);
+    // }
+    // void Update()
+    // {
+    //     if (myGuess != previousGuess)
+    //     {
+    //         if (myGuess == secretNumber)
+    //         {
+    //             Debug.Log("You win!");
+    //         }
+    //         else if (myGuess > secretNumber)
+    //         {
+    //             Debug.Log("Too high");
+    //         }
+    //         else 
+    //         {
+    //             Debug.Log("Too low");
+    //         }
+    //         previousGuess = myGuess;
+    //     }
     // }
