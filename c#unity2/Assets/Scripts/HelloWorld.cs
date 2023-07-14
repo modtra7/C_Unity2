@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour
 {
-    public string name;
    void OnDisable()
    {
-        // int[] numbers = new int[] { Random.Range(0, 100), Random.Range(0, 100), Random.Range(0, 100)};
-        // string numberText;
+        int[] coin = new int[] { Random.Range(1, 3) };
+        string flip;
+        flip = (coin[0] == 1) ? "Heads" : "Tails";
+        Debug.Log("your coin landed on " + flip);
 
-        // numberText = (numbers[0] % 2 == 0) ? "even" : "odd";
-        // Debug.Log(numbers[0] + " is " + numberText);
-        // numberText = (numbers[1] % 2 == 0) ? "even" : "odd";
-        // Debug.Log(numbers[1] + " is " + numberText);
-        // numberText = (numbers[2] % 2 == 0) ? "even" : "odd";
-        // Debug.Log(numbers[2] + " is " + numberText);
-
-        name = (name != "") ? name : "Player One";
-        Debug.Log("Hello, " + name);
    }
 }
 
@@ -196,3 +188,16 @@ public class HelloWorld : MonoBehaviour
         // {
         //     Debug.Log("Unfortunately, " + names[person] + " is dead.");
         // }
+        
+// int[] numbers = new int[] { Random.Range(0, 100), Random.Range(0, 100), Random.Range(0, 100)};
+        // string numberText;
+
+        // numberText = (numbers[0] % 2 == 0) ? "even" : "odd";
+        // Debug.Log(numbers[0] + " is " + numberText);
+        // numberText = (numbers[1] % 2 == 0) ? "even" : "odd";
+        // Debug.Log(numbers[1] + " is " + numberText);
+        // numberText = (numbers[2] % 2 == 0) ? "even" : "odd";
+        // Debug.Log(numbers[2] + " is " + numberText);
+
+        // name = (name != "") ? name : "Player One";
+        // Debug.Log("Hello, " + name);
