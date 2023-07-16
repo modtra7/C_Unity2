@@ -4,13 +4,47 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour
 {
+    public int player;
+    public int direction;
    void OnDisable()
    {
-        int[] coin = new int[] { Random.Range(1, 3) };
-        string flip;
-        flip = (coin[0] == 1) ? "Heads" : "Tails";
-        Debug.Log("your coin landed on " + flip);
+        string dir = "";
 
+        string person = "";
+
+        switch(player)
+        {
+            case 1:
+                person = "Player One";
+                break;
+            case 2:
+                person = "Player Two";
+                break;
+            default:
+                person = "Please select player";
+                break;
+        }
+        Debug.Log("Begin, " + person);
+
+        switch(direction)
+        {
+            case 0:
+                dir = "north";
+                break;
+            case 1:
+                dir = "east";
+                break;
+            case 2:
+                dir = "south";
+                break;
+            case 3:
+                dir = "west";
+                break;
+            default:
+                dir = "nowhere";
+                break;
+        }
+        Debug.Log("You moved " + dir);
    }
 }
 
@@ -201,3 +235,7 @@ public class HelloWorld : MonoBehaviour
 
         // name = (name != "") ? name : "Player One";
         // Debug.Log("Hello, " + name);
+        // int[] coin = new int[] { Random.Range(1, 3) };
+        // string flip;
+        // flip = (coin[0] == 1) ? "Heads" : "Tails";
+        // Debug.Log("your coin landed on " + flip);
