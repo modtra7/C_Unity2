@@ -2,39 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CompassDirection
+{
+    North, South, East, West
+}
+public enum PlayerSelect
+{
+    PlayerOne, PlayerTwo
+}
 public class HelloWorld : MonoBehaviour
 {
-    public int player;
-    public int direction;
+        public int direction;
+        public CompassDirection playerMovement;
+        public PlayerSelect selectPlayer;
+
+        const int months = 12;
+        const int weeks = 52;
+        const int days = 365;
    void OnDisable()
    {
         string dir = "";
 
-        switch(player)
+        switch(selectPlayer)
         {
-            case 1:
+            case PlayerSelect.PlayerOne:
                 Debug.Log("Begin Player One");
                 break;
-            case 2:
+            case PlayerSelect.PlayerTwo:
                 Debug.Log("Begin Player Two");
-                break;
-            default:
-                Debug.Log("Please select player");
                 break;
         }
 
-        switch(direction)
+        switch(playerMovement)
         {
-            case 0:
+            case CompassDirection.North:
                 dir = "north";
                 break;
-            case 1:
-                dir = "east";
+            case CompassDirection.East:
+                dir = "east"; 
                 break;
-            case 2:
+            case CompassDirection.South:
                 dir = "south";
                 break;
-            case 3:
+            case CompassDirection.West:
                 dir = "west";
                 break;
             default:
