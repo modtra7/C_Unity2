@@ -2,57 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CompassDirection
-{
-    North, South, East, West
-}
-public enum PlayerSelect
-{
-    PlayerOne, PlayerTwo
-}
 public class HelloWorld : MonoBehaviour
 {
-        public int direction;
-        public CompassDirection playerMovement;
-        public PlayerSelect selectPlayer;
-
-        const int months = 12;
-        const int weeks = 52;
-        const int days = 365;
-   void OnDisable()
-   {
-        string dir = "";
-
-        switch(selectPlayer)
+    public int[] scores;
+    public string[] names;
+    void OnDisable()
+    {
+        string player = "";
+        for (int i = 0; i < names.Length; i++)
         {
-            case PlayerSelect.PlayerOne:
-                Debug.Log("Begin Player One");
-                break;
-            case PlayerSelect.PlayerTwo:
-                Debug.Log("Begin Player Two");
-                break;
+            player += names[i] + " ";
         }
+        Debug.Log("Players: " + player);
 
-        switch(playerMovement)
+        int average = 0;
+        for (int i = 0; i < scores.Length; i++)
         {
-            case CompassDirection.North:
-                dir = "north";
-                break;
-            case CompassDirection.East:
-                dir = "east"; 
-                break;
-            case CompassDirection.South:
-                dir = "south";
-                break;
-            case CompassDirection.West:
-                dir = "west";
-                break;
-            default:
-                dir = "nowhere";
-                break;
+            average = average + scores[i];
         }
-        Debug.Log("You moved " + dir);
-   }
+        Debug.Log("The average is " + average / scores.Length);
+    }
 }
 
 //////////////////////
@@ -246,3 +215,59 @@ public class HelloWorld : MonoBehaviour
         // string flip;
         // flip = (coin[0] == 1) ? "Heads" : "Tails";
         // Debug.Log("your coin landed on " + flip);
+
+// public enum CompassDirection
+// {
+//     North, South, East, West
+// }
+// public enum PlayerSelect
+// {
+//     NoneSelected, PlayerOne, PlayerTwo
+// }
+// public class HelloWorld : MonoBehaviour
+// {
+//         public int direction;
+//         public CompassDirection playerMovement;
+//         public PlayerSelect selectPlayer;
+
+//         const int months = 12;
+//         const int weeks = 52;
+//         const int days = 365;
+//    void OnDisable()
+//    {
+//         string dir = "";
+
+//         switch(selectPlayer)
+//         {
+//             case PlayerSelect.PlayerOne:
+//                 Debug.Log("Begin Player One");
+//                 break;
+//             case PlayerSelect.PlayerTwo:
+//                 Debug.Log("Begin Player Two");
+//                 break;
+//             case PlayerSelect.NoneSelected:
+//                 Debug.Log("Please select player");
+//                 break;
+//         }
+
+//         switch(playerMovement)
+//         {
+//             case CompassDirection.North:
+//                 dir = "north";
+//                 break;
+//             case CompassDirection.East:
+//                 dir = "east"; 
+//                 break;
+//             case CompassDirection.South:
+//                 dir = "south";
+//                 break;
+//             case CompassDirection.West:
+//                 dir = "west";
+//                 break;
+//             default:
+//                 dir = "nowhere";
+//                 break;
+//         }
+//         Debug.Log("You moved " + dir);
+//    }
+// }
