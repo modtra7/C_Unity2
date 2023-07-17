@@ -10,21 +10,18 @@ public class HelloWorld : MonoBehaviour
    {
         string dir = "";
 
-        string person = "";
-
         switch(player)
         {
             case 1:
-                person = "Player One";
+                Debug.Log("Begin Player One");
                 break;
             case 2:
-                person = "Player Two";
+                Debug.Log("Begin Player Two");
                 break;
             default:
-                person = "Please select player";
+                Debug.Log("Please select player");
                 break;
         }
-        Debug.Log("Begin, " + person);
 
         switch(direction)
         {
