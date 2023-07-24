@@ -8,21 +8,33 @@ public class HelloWorld : MonoBehaviour
     public string[] names;
     void OnDisable()
     {
-        int average = 0;
-        int increment = 0;
-        foreach (int score in scores)
-        {
-            average = average + score;
-            increment += 1;
-        }
-        Debug.Log("The average is " + average / scores.Length);
-        Debug.Log("The loop repeated " + increment + " times");
+        // int average = 0;
+        // int increment = 0;
+        // do
+        // {
+        //     average += scores[increment];
+        //     increment++;
+        // }while (increment < scores.Length);
 
+        // foreach (int score in scores)
+        // {
+        //     average = average + score;
+        //     increment += 1;
+        // }
+        // Debug.Log("The average is " + average / scores.Length);
+        // Debug.Log("The loop repeated " + increment + " times");
+
+        int nameIncrement = 0;
         string existingNames = "";
-        foreach (string name in names)
+        while (nameIncrement < names.Length)
         {
-            existingNames = existingNames + name + " ";
+            existingNames += names[nameIncrement] + " ";
+            nameIncrement += 1;
         }
+        // foreach (string name in names)
+        // {
+        //     existingNames = existingNames + name + " ";
+        // }
         Debug.Log("Existing names: " + existingNames);
     }
 }
