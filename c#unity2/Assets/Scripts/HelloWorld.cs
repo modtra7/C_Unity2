@@ -8,21 +8,29 @@ public class HelloWorld : MonoBehaviour
     public string[] names;
     void OnDisable()
     {
-        string player = "";
-        for (int i = 0; i < names.Length; i++)
-        {
-            player += names[i] + " ";
-        }
-        Debug.Log("Players: " + player);
-
         int average = 0;
-        for (int i = 0; i < scores.Length; i++)
+        int increment = 0;
+        foreach (int score in scores)
         {
-            average = average + scores[i];
+            average = average + score;
+            increment += 1;
         }
         Debug.Log("The average is " + average / scores.Length);
+        Debug.Log("The loop repeated " + increment + " times");
+
+        string existingNames = "";
+        foreach (string name in names)
+        {
+            existingNames = existingNames + name + " ";
+        }
+        Debug.Log("Existing names: " + existingNames);
     }
 }
+
+//////////////////////
+// foreach(string title in referenceCollection){
+//     Debug.Log(title); // prints out the titles
+// }
 
 //////////////////////
 //type[] myArray = new type[length];
@@ -271,3 +279,10 @@ public class HelloWorld : MonoBehaviour
 //         Debug.Log("You moved " + dir);
 //    }
 // }
+
+        // string player = "";
+        // for (int i = 0; i < names.Length; i++)
+        // {
+        //     player += names[i] + " ";
+        // }
+        // Debug.Log("Players: " + player);
