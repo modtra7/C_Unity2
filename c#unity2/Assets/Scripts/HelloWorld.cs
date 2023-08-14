@@ -4,59 +4,40 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour
 {
-    public static void main(string[] args)
+    Player playerOne;
+    Alien alien;
+
+    void Start()
     {
-        //with stack we have 5 unique methods
-        // pop, push, peek, empty, search // -- stack.method() --
-        Stack<string> stack = new Stack<string>();
-        // push will add the element to the top of the stack
-        stack.Push("God of War");
-        stack.Push("Skyrim");
-        stack.Push("Gta");
-        stack.Push("FFXVI");
-        stack.Push("Hades");
-        // pop will remove the element from the top of the stack
-        stack.Pop();
-        // peek will look at the element at the top of the stack
-        stack.Peek();
+        playerOne = new Player();
+        playerOne.Name = "Kode";
+        playerOne.Score = 100;
+        playerOne.Lives = 3;
 
-        stack.Search("Hades");
+        alien = new Alien();
+        alien.Points = 100;
+        alien.HitPoints = 1;
+        alien.IsAlive = true;
     }
-
-    public int[] scores;
-    public string[] names;
     void OnDisable()
     {
-        // int average = 0;
-        // int increment = 0;
-        // do
-        // {
-        //     average += scores[increment];
-        //     increment++;
-        // }while (increment < scores.Length);
+        Debug.Log("Name: " + playerOne.Name + ", Score: " + playerOne.Score + ", Lives: " + playerOne.Lives);
 
-        // foreach (int score in scores)
-        // {
-        //     average = average + score;
-        //     increment += 1;
-        // }
-        // Debug.Log("The average is " + average / scores.Length);
-        // Debug.Log("The loop repeated " + increment + " times");
-
-        int nameIncrement = 0;
-        string existingNames = "";
-        while (nameIncrement < names.Length)
-        {
-            existingNames += names[nameIncrement] + " ";
-            nameIncrement += 1;
-        }
-        // foreach (string name in names)
-        // {
-        //     existingNames = existingNames + name + " ";
-        // }
-        Debug.Log("Existing names: " + existingNames);
+        Debug.Log("Is Alive: " + alien.IsAlive + ", Hit Points: " + alien.HitPoints + ", Point Value: " + alien.Points);
     }
 }
+
+// create alien struct
+// give variables  
+// point value int 
+// hitpoints int
+// alive bool
+
+
+
+
+
+
 
 //////////////////////
 // foreach(string title in referenceCollection){
@@ -317,3 +298,58 @@ public class HelloWorld : MonoBehaviour
         //     player += names[i] + " ";
         // }
         // Debug.Log("Players: " + player);
+
+
+    // public int[] scores;
+    // public string[] names;
+    // void OnDisable()
+    // {
+    //     // int average = 0;
+    //     // int increment = 0;
+    //     // do
+    //     // {
+    //     //     average += scores[increment];
+    //     //     increment++;
+    //     // }while (increment < scores.Length);
+
+    //     // foreach (int score in scores)
+    //     // {
+    //     //     average = average + score;
+    //     //     increment += 1;
+    //     // }
+    //     // Debug.Log("The average is " + average / scores.Length);
+    //     // Debug.Log("The loop repeated " + increment + " times");
+
+    //     int nameIncrement = 0;
+    //     string existingNames = "";
+    //     while (nameIncrement < names.Length)
+    //     {
+    //         existingNames += names[nameIncrement] + " ";
+    //         nameIncrement += 1;
+    //     }
+    //     // foreach (string name in names)
+    //     // {
+    //     //     existingNames = existingNames + name + " ";
+    //     // }
+    //     Debug.Log("Existing names: " + existingNames);
+    // }
+
+
+    //         public static void main(string[] args)
+    // {
+    //     //with stack we have 5 unique methods
+    //     // pop, push, peek, empty, search // -- stack.method() --
+    //     Stack<string> stack = new Stack<string>();
+    //     // push will add the element to the top of the stack
+    //     stack.Push("God of War");
+    //     stack.Push("Skyrim");
+    //     stack.Push("Gta");
+    //     stack.Push("FFXVI");
+    //     stack.Push("Hades");
+    //     // pop will remove the element from the top of the stack
+    //     stack.Pop();
+    //     // peek will look at the element at the top of the stack
+    //     stack.Peek();
+
+    //     stack.Search("Hades");
+    // }
