@@ -1,11 +1,7 @@
-public struct Player {
-    public string Name;
+namespace Beginning.CSharp {
+    public struct Player {
     public int Score;
     public int Lives;
+    public string Name;
 }
-
-public struct Alien {
-    public int Points;
-    public int HitPoints;
-    public bool IsAlive;
 }
