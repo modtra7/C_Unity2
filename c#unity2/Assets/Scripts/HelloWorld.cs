@@ -11,15 +11,13 @@ public class HelloWorld : MonoBehaviour
 
     void Start()
     {
-        playerOne = new Player();
-        playerOne.Name = "Kode";
-        
-        playerOne.Lives = 3;
-        Debug.Log("Lives: " + playerOne.Lives);
-
-        int aScore = 100;
-        playerOne.Score = aScore;
-        Debug.Log("A score is: " + aScore);
+        playerOne = new Player(3, "Barney", 100);
+        // playerOne.Name = "Kode";
+        // playerOne.Lives = 3;
+        // Debug.Log("Lives: " + playerOne.Lives);
+        // int aScore = 100;
+        // playerOne.Score = aScore;
+        // Debug.Log("A score is: " + aScore);
 
         alien = new Alien();
         // alien.Points = 100;
@@ -32,9 +30,9 @@ public class HelloWorld : MonoBehaviour
     }
     void OnDisable()
     {
-        // Debug.Log("Name: " + playerOne.Name + ", Score: " + playerOne.GetScore() + ", Lives: " + playerOne.Lives);
+        Debug.Log("Name: " + playerOne.Name + ", Score: " + playerOne.Score + ", Lives: " + playerOne.Lives);
 
-        Debug.Log("Is Alive: " + alien.IsAlive + ", Hit Points: " + alien.HitPoints + ", Point Value: " + alien.Points);
+        // Debug.Log("Is Alive: " + alien.IsAlive + ", Hit Points: " + alien.HitPoints + ", Point Value: " + alien.Points);
     }
 }
 

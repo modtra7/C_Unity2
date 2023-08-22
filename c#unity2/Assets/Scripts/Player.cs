@@ -3,6 +3,16 @@ namespace Beginning.CSharp {
 
         private int lives;
 
+        public Player(int lives, string name, int score) : this() {
+            this.lives = lives;
+            this.Name = name;
+            this.Score = score;
+        }
+
+        public Player(int score) : this(3, "Unknown", score) {
+
+        }
+
         public int Lives {
             get {
                 return lives;
