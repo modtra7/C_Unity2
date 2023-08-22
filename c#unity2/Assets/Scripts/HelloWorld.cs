@@ -12,27 +12,18 @@ public class HelloWorld : MonoBehaviour
     void Start()
     {
         playerOne = new Player(3, "Barney", 100);
-        // playerOne.Name = "Kode";
-        // playerOne.Lives = 3;
-        // Debug.Log("Lives: " + playerOne.Lives);
-        // int aScore = 100;
-        // playerOne.Score = aScore;
-        // Debug.Log("A score is: " + aScore);
 
-        alien = new Alien();
+        alien = new Alien(100, 1, false);
+
         // alien.Points = 100;
         // alien.HitPoints = 1;
         // alien.IsAlive = false;
-
-        alien.Points = 100;
-        alien.HitPoints = 1;
-        alien.IsAlive = false;
     }
     void OnDisable()
     {
         Debug.Log("Name: " + playerOne.Name + ", Score: " + playerOne.Score + ", Lives: " + playerOne.Lives);
 
-        // Debug.Log("Is Alive: " + alien.IsAlive + ", Hit Points: " + alien.HitPoints + ", Point Value: " + alien.Points);
+        Debug.Log("Is Alive: " + alien.IsAlive + ", Hit Points: " + alien.HitPoints + ", Point Value: " + alien.Points);
     }
 }
 
