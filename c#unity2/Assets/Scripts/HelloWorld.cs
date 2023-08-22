@@ -15,9 +15,10 @@ public class HelloWorld : MonoBehaviour
         playerOne.Name = "Kode";
         
         playerOne.Lives = 3;
+        Debug.Log("Lives: " + playerOne.Lives);
 
         int aScore = 100;
-        playerOne.SetScore(aScore);
+        playerOne.Score = aScore;
         Debug.Log("A score is: " + aScore);
 
         alien = new Alien();
@@ -25,22 +26,16 @@ public class HelloWorld : MonoBehaviour
         // alien.HitPoints = 1;
         // alien.IsAlive = false;
 
-        int Points = 100;
-        alien.SetPoints(Points);
-        Debug.Log("Points: " + Points);
-        int HP = 1;
-        alien.SetHitPoints(HP);
-        Debug.Log("HP: " + HP);
-        bool IsAlive = false;
-        alien.SetIsAlive(IsAlive);
-        Debug.Log("Is alive: " + IsAlive);
+        alien.SetPoints(100);
+        alien.SetHitPoints(1);
+        alien.SetIsAlive(false);
     }
-    // void OnDisable()
-    // {
-    //     Debug.Log("Name: " + playerOne.Name + ", Score: " + playerOne.GetScore() + ", Lives: " + playerOne.Lives);
+    void OnDisable()
+    {
+        // Debug.Log("Name: " + playerOne.Name + ", Score: " + playerOne.GetScore() + ", Lives: " + playerOne.Lives);
 
-    //     Debug.Log("Is Alive: " + alien.IsAlive + ", Hit Points: " + alien.HitPoints + ", Point Value: " + alien.Points);
-    // }
+        Debug.Log("Is Alive: " + alien.GetIsAlive() + ", Hit Points: " + alien.GetHitPoints() + ", Point Value: " + alien.GetPoints());
+    }
 }
 
 // create alien struct

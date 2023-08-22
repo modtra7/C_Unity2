@@ -1,16 +1,34 @@
 namespace Beginning.CSharp {
     public struct Player {
 
-        public int Lives;
-        public string Name;
+        private int lives;
 
-        private int score;
+        public int Lives {
+            get {
+                return lives;
+            }
+            set {
+                lives = value + 1;
+            }
+        }
+        public string Name {
+            get;
+            set;
+        }
+        public int Score {
+            get;
+            set;
+        }
 
-        public void SetScore(int score) {
-            this.score = score + 1;
-        }
-        public int GetScore() {
-            return score;
-        }
     }
 }
+
+//////////////
+// Getters and Setters
+// remember that when using getters and setters we want to use private so to secure the stability of our variable
+        // public void SetScore(int score) {
+        //     this.score = score + 1;
+        // }
+        // public int GetScore() {
+        //     return score;
+        // }
