@@ -26,15 +26,15 @@ public class HelloWorld : MonoBehaviour
         // alien.HitPoints = 1;
         // alien.IsAlive = false;
 
-        alien.SetPoints(100);
-        alien.SetHitPoints(1);
-        alien.SetIsAlive(false);
+        alien.Points = 100;
+        alien.HitPoints = 1;
+        alien.IsAlive = false;
     }
     void OnDisable()
     {
         // Debug.Log("Name: " + playerOne.Name + ", Score: " + playerOne.GetScore() + ", Lives: " + playerOne.Lives);
 
-        Debug.Log("Is Alive: " + alien.GetIsAlive() + ", Hit Points: " + alien.GetHitPoints() + ", Point Value: " + alien.GetPoints());
+        Debug.Log("Is Alive: " + alien.IsAlive + ", Hit Points: " + alien.HitPoints + ", Point Value: " + alien.Points);
     }
 }
 
