@@ -4,9 +4,9 @@ namespace MyAlien {
         public Alien(int points, int hitPoints, bool isAlive) : this() {
             this.Points = points;
             this.HitPoints = hitPoints;
-            this.IsAlive = false;
+            this.IsAlive = isAlive;
         }
-        public Alien(int points) : this(points, 1, false) {
+        public Alien(int points) : this(points, 1, true) {
 
         }
         public int Points {

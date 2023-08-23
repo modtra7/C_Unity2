@@ -1,5 +1,9 @@
 namespace Beginning.CSharp {
-    public struct Player {
+
+    public interface IPersistable {
+        void Save(); 
+    }
+    public struct Player : IPersistable {
 
         private int lives;
 
@@ -11,6 +15,10 @@ namespace Beginning.CSharp {
 
         public Player(int score) : this(3, "Unknown", score) {
 
+        }
+
+        public void Save() {
+            //save
         }
 
         public int Lives {
