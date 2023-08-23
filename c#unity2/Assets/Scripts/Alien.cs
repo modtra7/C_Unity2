@@ -1,5 +1,8 @@
+using UnityEngine;
+
 namespace MyAlien {
-    public struct Alien {
+
+    public struct Alien : IShootable {
 
         public Alien(int points, int hitPoints, bool isAlive) : this() {
             this.Points = points;
@@ -8,6 +11,9 @@ namespace MyAlien {
         }
         public Alien(int points) : this(points, 1, true) {
 
+        }
+        public void Fire() {
+            Debug.Log("Alien fires");
         }
         public int Points {
             get;
