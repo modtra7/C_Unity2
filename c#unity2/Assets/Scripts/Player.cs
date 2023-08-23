@@ -1,8 +1,7 @@
+using UnityEngine;
+
 namespace Beginning.CSharp {
 
-    public interface IPersistable {
-        void Save(); 
-    }
     public struct Player : IPersistable {
 
         private int lives;
@@ -18,7 +17,7 @@ namespace Beginning.CSharp {
         }
 
         public void Save() {
-            //save
+            Debug.Log("Player saves");
         }
 
         public int Lives {
