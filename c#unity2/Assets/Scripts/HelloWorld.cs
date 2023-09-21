@@ -11,7 +11,7 @@ public class HelloWorld : MonoBehaviour
 
     void Start()
     {
-        playerOne = new Player(3, "Barney", 100);
+        // playerOne = new Player(3, "Barney", 100);
 
         alien = new Alien(100, 1, false);
 
@@ -21,7 +21,7 @@ public class HelloWorld : MonoBehaviour
     }
     void OnDisable()
     {
-        Debug.Log("Name: " + playerOne.Name + ", Score: " + playerOne.Score + ", Lives: " + playerOne.Lives);
+        // Debug.Log("Name: " + playerOne.Name + ", Score: " + playerOne.Score + ", Lives: " + playerOne.Lives);
 
         Debug.Log("Is Alive: " + alien.IsAlive + ", Hit Points: " + alien.HitPoints + ", Point Value: " + alien.Points);
     }
